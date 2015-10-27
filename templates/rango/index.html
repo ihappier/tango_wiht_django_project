@@ -1,0 +1,22 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h1>Rango says</h1>
+hello,world!<strong>{{ boldmessage }}</strong><br/>
+{% if categories %}
+    <ul>{% for category in categories %}
+        <li><a href="/rango/category/{{ category.slug }}"> {{ category.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <strong>什么都没有</strong>
+{% endif %}<br/>
+<a href="/rango/about/">About</a><br/>
+<img src="{% static 'image/zhu1.jpg' %}" alt="Pic of rango" width="50%" height="50%"/>
+</body>
+</html>
